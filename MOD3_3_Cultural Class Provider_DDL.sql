@@ -87,7 +87,7 @@ CREATE TABLE issues (
 	FOREIGN KEY (trans_no)		REFERENCES transactions (trans_no)
 );
 
-INSERT INTO issues VALUES (4321,203,NULL,8522,'Payment for Course',201),(4322,203,NULL,8522,'Payment for Course',201);
+INSERT INTO issues VALUES (4321,203,NULL,8522,'Payment for Course',201),(4322,203,NULL,8521,'Payment for Course',201);
 
 -- Client Groups --
 DROP TABLE IF EXISTS client_groups;
