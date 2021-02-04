@@ -7,24 +7,29 @@ import java.sql.*;
 import java.util.*;
 
 public class enroll {
-
+    private int                      term;
+    private int                      schoolyear;
     private students                 Student;
     private ArrayList<enrollment>    EnrollmentList  = new ArrayList<> ();
     private ArrayList<coursedegree>  CourseList      = new ArrayList<> ();
  
     // perform all the necessary data loading from DB
-    public enroll() {
-        this.Student = new students();
-        EnrollmentList.clear();
-        CourseList.clear();
-        loadCourses();
-    };         
+    public enroll() {};         
     
     public enroll(students Student) {
         this.Student = Student;
-        EnrollmentList.clear();
-        CourseList.clear();
-        loadCourses();
+    }
+    
+    public students getStudent() {
+        return Student;
+    }
+    
+    public int getTerm() {
+        return term;
+    }
+    
+    public int getSchoolYear() {
+        return schoolyear;
     }
     
     public ArrayList<enrollment> getEnrollmentList() {
@@ -39,10 +44,18 @@ public class enroll {
         this.Student = Student;
     }
     
+    public void setTerm(int term) {
+        this.term = term;
+    }
+    
+    public void setSchoolYear(int schoolyear) {
+        this.schoolyear = schoolyear;
+    }
+    
     // clears enrollment data of the student 
     public int clearEnrollment ()   {  
         EnrollmentList.clear();
-        loadCourses();
+        CourseList.clear();
         return 1;
     };   
     
@@ -67,8 +80,16 @@ public class enroll {
             CourseList.clear();
             while (rs.next()) {
                 coursedegree CD = new coursedegree(rs.getString("courseid"), rs.getString("degree"));
-                CourseList.add(CD);
+                boolean notInEnrollmentList = true;
+                for(enrollment e : EnrollmentList) {
+                    if(e.getCourseId().equals(CD.getCourseId())) {
+                        notInEnrollmentList = false;
+                        break;
+                    }
+                }
+                if(notInEnrollmentList) CourseList.add(CD);
             }
+            
             rs.close();
             pstmt.close();
             conn.close();
@@ -86,12 +107,12 @@ public class enroll {
     };
     
     public static void main(String args[]) {
-        students v_students = new students(11912345, "Joseph Monte Carlo", "BSCS");
-        enroll v_enroll = new enroll(v_students);
-        for(coursedegree cd : v_enroll.getCourseList()) {
-            System.out.println(cd.getCourseId());
-            System.out.println(cd.getDegree());
-            System.out.println("...........");
-        }
+//        students v_students = new students(11912345, "Joseph Monte Carlo", "BSCS");
+//        enroll v_enroll = new enroll(v_students);
+//        for(coursedegree cd : v_enroll.getCourseList()) {
+//            System.out.println(cd.getCourseId());
+//            System.out.println(cd.getDegree());
+//            System.out.println("...........");
+//        }
     }
 }

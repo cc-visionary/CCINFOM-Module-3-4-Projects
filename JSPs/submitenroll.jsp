@@ -17,11 +17,11 @@
         <%
             if(enrollBean.confirmEnrollment() == 1) {
         %>
-                <p>Student ID <strong><%=request.getParameter("studentid")%></strong>'s enrollment was successful</p>
+                <p>Student ID <strong><%=enrollBean.getStudent().getStudentId()%></strong>'s enrollment was successful</p>
         <%
             } else {
         %>
-                <p>Student ID <strong><%=request.getParameter("studentid")%></strong>'s enrollment was unsuccessful</p>
+                <p>Student ID <strong><%=enrollBean.getStudent().getStudentId()%></strong>'s enrollment was unsuccessful</p>
         <% } %>
         <% enrollBean.clearEnrollment(); %>
         <br />

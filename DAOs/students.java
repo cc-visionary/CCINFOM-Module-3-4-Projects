@@ -148,16 +148,16 @@ public class students {
     }
     
     public static void main(String args[]) {
-//       students v_students = new students(11912345, "Joseph Monte Carlo", "BSCS");
+       students v_students = new students(11912345, "Joseph Monte Carlo", "BSCS");
 //       v_students.addRecord();
 //       v_students.modRecord();
 //       v_students.delRecord();
-//       v_students.viewRecord();
-//       for(students student : v_students.getStudentList()) {
-//           System.out.println(student.getStudentId());
-//           System.out.println(student.getCompleteName());
-//           System.out.println(student.getDegreeId());
-//           System.out.println(".........................");
-//       }
+       v_students.viewRecord();
+       for(students student : v_students.getStudentList()) {
+           System.out.println(student.getStudentId());
+           System.out.println(student.getCompleteName());
+           System.out.println(student.getDegreeId());
+           System.out.println(".........................");
+       }
     }
 }

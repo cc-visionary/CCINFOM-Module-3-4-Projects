@@ -30,12 +30,12 @@
         </div>
         
         <h1>2 - Student Enrollment</h1>
-        <a href="enroll_studentdata.jsp">Enroll</a><br/>
+        <a href="enroll_studentdetails.jsp">Enroll</a><br/>
         
         <h1>3 - Dropping</h1>
-        <a href="#">Drop</a><br/>
+        <a href="drop_studentdetails.jsp">Drop</a><br/>
         
         <h1>4 - Generate Report</h1>
-        <a href="#">Show Report</a><br/>
+        <a href="report_details.jsp">Show Report</a><br/>
     </body>
 </html>
