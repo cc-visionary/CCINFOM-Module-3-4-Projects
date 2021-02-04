@@ -33,7 +33,7 @@
         <p>Student ID     : <%=studentBean.getStudentId()%></p>
         <p>Complete Name  : <%=studentBean.getCompleteName()%></p>
         <p>Degree ID      : <%=studentBean.getDegreeId()%></p>
-        <p>There are <strong><%=dropBean.getEnrollmentList().size()%></strong> courses <%=studentBean.getCompleteName()%> has enrolled in Term <%=request.getParameter("term")%>, School Year <%=request.getParameter("schoolyear")%></p>
+        <p>There are <strong><%=dropBean.getEnrollmentList().size()%></strong> courses <%=studentBean.getCompleteName()%> has enrolled in Term <%=dropBean.getTerm()%>, School Year <%=dropBean.getSchoolYear()%></p>
         <table style="width:50%" border="1">
             <tr>
                 <th>Course ID</th>
